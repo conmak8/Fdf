@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmakario <cmakario@student.42.fr>          +#+  +:+       +#+        */
+/*   By: con.mak <con.mak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 17:00:45 by con.mak           #+#    #+#             */
-/*   Updated: 2024/06/04 00:24:18 by cmakario         ###   ########.fr       */
+/*   Updated: 2024/06/05 16:39:49 by con.mak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	main(int argc, char **argv)
 	t_window_size	window_size;
 
 	(void)argc;
-	window_size.x = 1920;
-	window_size.y = 1080;
+	window_size.x = 1200;
+	window_size.y = 800;
 	init_variables(&(vars.vars));
 	init_data(&(vars.data), argv[1]);
 	init_mesh(vars.data, &(vars.mesh), &(vars.mesh_after), vars.vars.scale);

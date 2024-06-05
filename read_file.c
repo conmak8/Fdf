@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_file.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmakario <cmakario@student.42.fr>          +#+  +:+       +#+        */
+/*   By: con.mak <con.mak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 17:00:35 by con.mak           #+#    #+#             */
-/*   Updated: 2024/06/03 19:59:03 by cmakario         ###   ########.fr       */
+/*   Updated: 2024/06/05 17:09:45 by con.mak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ int	get_width(char *file_name)
 	{
 		if (line[i - 1] == ' ' && line[i] != ' ')
 			width++;
+	}
+	while (line)
+	{
+		free(line);
+		line = get_next_line(fd);
 	}
 	close(fd);
 	return (width);
@@ -170,10 +175,12 @@ int	read_file(char *file_name, t_meshfdf *data)
 	line = get_next_line(fd);
 	while (line)
 	{
+		printf("line: %s\n",line);
 		fill_matrix(data->z_coordinates[i], data->color[i], line, data->width);
 		i++;
 		free(line);
 		line = get_next_line(fd);
+		printf("point: %p\n",line);
 	}
 	close(fd);
 	return (0);
