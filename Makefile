@@ -44,7 +44,7 @@ clean :
 	$(RM) $(OBJS)
 	make fclean -C $(LIBFT_DIR)
 	make fclean -C ft_printf
-	make fclean -C $(MLX_DIR)
+	make clean -C $(MLX_DIR)
 
 re : fclean all
 
