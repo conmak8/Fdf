@@ -125,22 +125,22 @@ void	allocate_memory(t_meshfdf *data)
 	data->z_coordinates = (int **)malloc(sizeof(int *) * (data->height) + 1);
 	if (!data->z_coordinates)
 	{
-		perror("Failed to allocate memory for z_coordinates");
+		perror("Failed to allocate memory for z_coordinates"); // remember to free first! has to be fixed
 		exit(EXIT_FAILURE);
 	}
 	data->color = (int **)malloc(sizeof(int *) * (data->height) + 1);
 	if (!data->color)
 	{
-		perror("Failed to allocate memory for color");
+		perror("Failed to allocate memory for color"); // remember to free first! has to be fixed
 		exit(EXIT_FAILURE);
 	}
 	while (i < data->height)
 	{
 		data->z_coordinates[i] = (int *)malloc(sizeof(int) * (data->width) + 1);
-		if (!data->z_coordinates[i])
+		if (!data->z_coordinates[i]) // remember to free first! has to be fixed
 			exit(5);
 		data->color[i] = (int *)malloc(sizeof(int) * ((data->width) + 1));
-		if (!data->color[i])
+		if (!data->color[i]) // remember to free first! has to be fixed
 			exit(6);
 		i++;
 	}
